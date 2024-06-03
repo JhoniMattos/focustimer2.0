@@ -1,0 +1,120 @@
+* {
+  border: 0;
+  padding: 0;
+  box-sizing: border-boxw;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+
+  --bg-color: hsla(0, 0, 100,);
+  --text-color: hsla(240, 6%, 21%, 1);
+  --bg-button-on: hsla(194, 97%, 31%, 1);
+  --bg-button-off: hsla(240, 9%, 89%, 1);
+  --img-button-on: hsla(0, 0%, 100%, 1);
+
+  font-size: clamp(40%, 1% + 2vw, 62.5%);
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  appearance: none;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  display: grid;
+  height: 100vh;
+  place-content: center;
+}
+
+#app {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  gap: 19rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
+
+#timer {
+  font-size: 12.6rem;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+}
+
+#controls {
+  width: 32rem;
+  max-height: 5.2rem;
+  justify-content: space-between;
+  margin-top: 1.6rem;
+  gap: 1.6rem;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
+
+.control-button {
+  background-color: transparent;
+  color: var(--text-color);
+
+  font-size: 4.8rem;
+  transition: transform 1s ;
+}
+
+.control-button:hover {
+  transform: scale(1.1);
+}
+
+.ambient-sounds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.ambient-sound {
+  background-color: #E1E1E6;
+  padding: 4.8rem;
+  border-radius: 2.4rem;
+  transition: filter 0.8s ease;
+}
+
+.ambient-sound:hover {
+  filter: brightness(0.90);
+}
+
+.ambient-sound.playing {
+  background-color: var(--bg-button-on);
+}
+
+.ambient-sound.playing img {
+  fill: var(--bg-button-off);
+}
+
+.running .play-button,
+html:not(.running) .stop-button {
+    display: none;
+}
+
